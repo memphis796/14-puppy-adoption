@@ -4,3 +4,46 @@
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
 @import 'box-sizing';
+
+
+.top-nav {
+  background-color: #FF6600;
+  width: 100%;
+  font-weight: 100;
+}
+
+.form-title {
+  margin: 0;
+}
+
+.top-nav__header {
+  padding: 1em;
+  color: white;
+  margin: 0;
+}
+
+.top-nav__form {
+  background-color: #5E6D70;
+  width: 100%;
+  padding: 5em;
+  color: white;
+}
+
+.label-name {
+  display: flex;
+}
+
+.input-field {
+  background-color: #5E6D70;
+  border-bottom: 2px solid black;
+  border: none;
+}
+
+.puppy-card__form {
+  background-color: #F2F2F3;
+  padding: 3em;
+}
+
+.puppy-label__name {
+  display: flex;
+}
