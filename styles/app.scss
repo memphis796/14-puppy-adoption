@@ -1,49 +1,98 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+@import 'font-awesome';
 @import 'box-sizing';
-
+@import 'variables';
 
 .top-nav {
-  background-color: #FF6600;
   width: 100%;
+  background-color: $brand-background-color;
   font-weight: 100;
 }
 
-.form-title {
-  margin: 0;
+.top-nav__header {
+  display: flex;
+  justify-content: space-between;
+  width: 81%;
+  margin: auto;
+  padding: 1em;
+  color: $brand-color;
 }
 
-.top-nav__header {
+.puppy__form {
+  width: 100%;
   padding: 1em;
-  color: white;
-  margin: 0;
+  background-color: $puppy-addon-form;
+  color: $brand-color;
+
+}
+
+.form-title {
+  margin-top: 0;
+}
+
+.puppy__input-field {
+  width: 100%;
+  border: 0;
+  border-bottom: $brand-border-bottom;
+  background-color: $puppy-addon-form;
 }
 
 .top-nav__form {
-  background-color: #5E6D70;
+  display: flex;
+  width: 77%;
+  margin: 1em auto;
+  padding: 1em 2em;
+  background-color: $brand-background;
+  box-shadow: 0 0 10px -3px;
+}
+
+.puppy-image {
+  margin-right: 2em;
+}
+
+.input-field {
   width: 100%;
-  padding: 5em;
-  color: white;
+  margin-bottom: 1em;
+  border: 0;
+  border-bottom: $brand-border-bottom;
+  background-color: $brand-background;
+}
+
+.puppy-card__form {
+  padding: 3em;
+  background-color: $brand-color;
+}
+
+.input__info {
+  width: 100%;
+}
+
+.container {
+  width: 79%;
+  margin: auto;
 }
 
 .label-name {
   display: flex;
+  margin-bottom: 0.7em;
+  padding-top: 0.6em;
 }
 
-.input-field {
-  background-color: #5E6D70;
-  border-bottom: 2px solid black;
-  border: none;
-}
-
-.puppy-card__form {
-  background-color: #F2F2F3;
-  padding: 3em;
-}
-
-.puppy-label__name {
+.top-label__buttons {
   display: flex;
+  justify-content: space-between;
+  margin-top: 0.6em;
+}
+
+.form-button {
+  justify-content: space-between;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 0.5em;
+  background-color: $brand-background-color;
+  color: $brand-color;
+  font-size: 0.9em;
 }

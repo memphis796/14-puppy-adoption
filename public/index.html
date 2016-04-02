@@ -8,12 +8,72 @@
 <body>
 
   <nav class="top-nav">
-    <h2 class="top-nav__header">Puppies</h2>
+    <h2 class="top-nav__header">Puppies<i class="fa fa-plus-circle"></i></h2>
   </nav>
 
-     <form class="top-nav__form">
+
+  <form class="puppy__form">
+    <form class="puppy__form-info">
+
+    <div class="container">
       <h3 class="form-title">Add a new puppy</h3>
 
+      <div class="input__info">
+
+        <label class="label-name">Name</label>
+        <input class="puppy__input-field" type="text" name="name" value="">
+
+        <label class="label-name">Age</label>
+        <input class="puppy__input-field" type="text" name="name" value="">
+
+        <label class="label-name">Photo URL</label>
+        <input class="puppy__input-field" type="text" name="name" value="">
+
+        <label class="label-name">Profile</label>
+        <input class="puppy__input-field" type="text" name="name" value="">
+
+        <div class="top-label__buttons">
+          <button class="form-button" type="button" name="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+     <form class="top-nav__form">
+
+       <div class="puppy-image">
+         <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt="" />
+       </div>
+
+      <div class="input__info">
+        <label class="label-name">Name</label>
+        <input class="input-field" type="text" name="name" value="">
+
+        <label class="label-name">Age</label>
+        <input class="input-field" type="text" name="name" value="">
+
+        <label class="label-name">Photo URL</label>
+        <input class="input-field" type="text" name="name" value="">
+
+        <label class="label-name">Profile</label>
+        <input class="input-field" type="text" name="name" value="">
+
+        <div class="top-label__buttons">
+          <button class="form-button" type="button" name="button">Delete</button>
+          <button class="form-button" type="button" name="button">Update</button>
+      </div>
+    </div>
+  </form>
+
+
+     <form class="top-nav__form">
+
+       <div class="puppy-image">
+         <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt="" />
+       </div>
+
+      <div class="input__info">
        <label class="label-name">Name</label>
           <input class="input-field" type="text" name="name" value="">
 
@@ -26,27 +86,13 @@
        <label class="label-name">Profile</label>
           <input class="input-field" type="text" name="name" value="">
 
-        <button class="save-button" type="button" name="button">Save</button>
+         <div class="top-label__buttons">
+           <button class="form-button" type="button" name="button">Delete</button>
+           <button class="form-button" type="button" name="button">Update</button>
+         </div>
+       </div>
      </form>
-
-
-     <form class="puppy-card__form">
-
-       <label class="puppy-label__name">Name</label>
-          <input class="puppy-input" type="text" name="name" value="">
-
-       <label class="puppy-label__name">Age</label>
-          <input class="puppy-input" type="text" name="name" value="">
-
-       <label class="puppy-label__name">Photo URL</label>
-          <input class="puppy-input" type="text" name="name" value="">
-
-       <label class="puppy-label__name">Profile</label>
-          <input class="puppy-input" type="text" name="name" value="">
-
-        <button class="save-button" type="button" name="button">Delete</button>
-        <button class="save-button" type="button" name="button">Update</button>
-     </form>
+   </form>
 
     <script src="/vendor.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
