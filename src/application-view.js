@@ -1,5 +1,6 @@
 'use strict';
 import CreateFormView from 'create-form-view';
+import PuppyView from 'puppy-view';
 
 export default class ApplicationView {
   constructor(element) {
@@ -8,7 +9,7 @@ export default class ApplicationView {
 
     const create = new CreateFormView(this.nav);
 
-    fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies`)
+    fetch(`http://tiny-tn.herokuapp.com/collections/ryan-puppy`)
     .then((res) => res.json())
     .then((data) => {
       this.data = data;
@@ -18,7 +19,12 @@ export default class ApplicationView {
   }
 
   render() {
-    this.list.innerHTML = ``
+    this.list.innerHTML = ``;
+    this.data.forEach((puppy) => {
+      const puppyCard = new PuppyView(puppy);
+
+      this.list.appendChild(puppyCard.card);
+    });
 
   }
 }
