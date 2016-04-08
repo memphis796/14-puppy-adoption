@@ -21,8 +21,8 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   color: $brand-color;
 }
 
-.puppy__card {
-  display: none;
+.top-nav__form {
+  // display: none;
   width: 100%;
   padding: 1em;
   background-color: $puppy-addon-form;
@@ -30,7 +30,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 }
 
 .puppy-plus:hover {
-  display: block;
+  // display: block;
 }
 
 .form-title {
@@ -44,7 +44,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   background-color: $puppy-addon-form;
 }
 
-.top-nav__form {
+.puppy-card {
   display: flex;
   width: 77%;
   margin: 1em auto;
