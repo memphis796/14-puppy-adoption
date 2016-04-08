@@ -22,11 +22,15 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 }
 
 .top-nav__form {
-  // display: none;
+  display: none;
   width: 100%;
   padding: 1em;
   background-color: $puppy-addon-form;
   color: $brand-color;
+
+  &--active {
+    display: block;
+  }
 }
 
 .puppy-plus:hover {
