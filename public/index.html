@@ -1,106 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>14-Puppy-Adoption</title>
-  <link rel="stylesheet" href="/app.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>14-Puppy-Adoption</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
 
-  <nav class="top-nav">
-    <h2 class="top-nav__header">Puppies<i class="fa fa-plus-circle"></i></h2>
-  </nav>
+    <nav class="top-nav">
+      <h2 class="top-nav__header">Puppies<i class="puppy-plus fa fa-plus-circle"></i>
+      </h2>
+    </nav>
 
+    <form class="puppy__card">
+      <form class="puppy__card-info">
 
-  <form class="puppy__form">
-    <form class="puppy__form-info">
+        <div class="puppy-container">
+          <h3 class="form-title">Add a new puppy</h3>
 
-    <div class="container">
-      <h3 class="form-title">Add a new puppy</h3>
+          <div class="puppy__form">
 
-      <div class="input__info">
+            <label class="label-name">Name</label>
+            <input class="puppy__input-field" type="text" name="name" value="">
 
-        <label class="label-name">Name</label>
-        <input class="puppy__input-field" type="text" name="name" value="">
+            <label class="label-name">Age</label>
+            <input class="puppy__input-field" type="text" name="name" value="">
 
-        <label class="label-name">Age</label>
-        <input class="puppy__input-field" type="text" name="name" value="">
+            <label class="label-name">Photo URL</label>
+            <input class="puppy__input-field" type="text" name="name" value="">
 
-        <label class="label-name">Photo URL</label>
-        <input class="puppy__input-field" type="text" name="name" value="">
+            <label class="label-name">Profile</label>
+            <input class="puppy__input-field" type="text" name="name" value="">
 
-        <label class="label-name">Profile</label>
-        <input class="puppy__input-field" type="text" name="name" value="">
-
-        <div class="top-label__buttons">
-          <button class="form-button" type="button" name="button">Save</button>
+            <div class="top-label__buttons">
+              <button class="form-button" type="button" name="button">Save</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </form>
+      </form>
 
+      <form class="top-nav__form">
 
-     <form class="top-nav__form">
+        <div class="puppy-image">
+          <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt=""/>
+        </div>
 
-       <div class="puppy-image">
-         <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt="" />
-       </div>
-
-      <div class="input__info">
-        <label class="label-name">Name</label>
-        <input class="input-field" type="text" name="name" value="">
-
-        <label class="label-name">Age</label>
-        <input class="input-field" type="text" name="name" value="">
-
-        <label class="label-name">Photo URL</label>
-        <input class="input-field" type="text" name="name" value="">
-
-        <label class="label-name">Profile</label>
-        <input class="input-field" type="text" name="name" value="">
-
-        <div class="top-label__buttons">
-          <button class="form-button" type="button" name="button">Delete</button>
-          <button class="form-button" type="button" name="button">Update</button>
-      </div>
-    </div>
-  </form>
-
-
-     <form class="top-nav__form">
-
-       <div class="puppy-image">
-         <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt="" />
-       </div>
-
-      <div class="input__info">
-       <label class="label-name">Name</label>
+        <div class="input__info">
+          <label class="label-name">Name</label>
           <input class="input-field" type="text" name="name" value="">
 
-       <label class="label-name">Age</label>
+          <label class="label-name">Age</label>
           <input class="input-field" type="text" name="name" value="">
 
-       <label class="label-name">Photo URL</label>
+          <label class="label-name">Photo URL</label>
           <input class="input-field" type="text" name="name" value="">
 
-       <label class="label-name">Profile</label>
+          <label class="label-name">Profile</label>
           <input class="input-field" type="text" name="name" value="">
 
-         <div class="top-label__buttons">
-           <button class="form-button" type="button" name="button">Delete</button>
-           <button class="form-button" type="button" name="button">Update</button>
-         </div>
-       </div>
-     </form>
-   </form>
+          <div class="top-label__buttons">
+            <button class="form-button" type="button" name="button">Delete</button>
+            <button class="form-button" type="button" name="button">Update</button>
+          </div>
+        </div>
+      </form>
+
+      <form class="top-nav__form">
+
+        <div class="puppy-image">
+          <img src="http://tidewaterretrievers.com/images/puppy-wing2.jpg" alt=""/>
+        </div>
+
+        <div class="input__info">
+          <label class="label-name">Name</label>
+          <input class="input-field" type="text" name="name" value="">
+
+          <label class="label-name">Age</label>
+          <input class="input-field" type="text" name="name" value="">
+
+          <label class="label-name">Photo URL</label>
+          <input class="input-field" type="text" name="name" value="">
+
+          <label class="label-name">Profile</label>
+          <input class="input-field" type="text" name="name" value="">
+
+          <div class="top-label__buttons">
+            <button class="form-button" type="button" name="button">Delete</button>
+            <button class="form-button" type="button" name="button">Update</button>
+          </div>
+        </div>
+      </form>
+    </form>
 
     <script src="/vendor.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
 
     <script type="text/javascript">
-    fetch(`http://tiny-tn.herokuapp.com/collections/ryan-puppy`)
-      .then(response => response.json())
-      .then(data => console.log(data));
+      var index = require('index');
+
+      index();
     </script>
   </body>
 </html>
+
+<!--
+ fetch(`http://tiny-tn.herokuapp.com/collections/ryan-puppy`)
+  .then(response => response.json())
+  .then(data => console.log(data)); -->

@@ -21,12 +21,16 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   color: $brand-color;
 }
 
-.puppy__form {
+.puppy__card {
+  display: none;
   width: 100%;
   padding: 1em;
   background-color: $puppy-addon-form;
   color: $brand-color;
+}
 
+.puppy-plus:hover {
+  display: block;
 }
 
 .form-title {
@@ -70,7 +74,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   width: 100%;
 }
 
-.container {
+.puppy-container {
   width: 79%;
   margin: auto;
 }
