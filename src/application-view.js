@@ -8,8 +8,10 @@ export default class ApplicationView {
     this.info = element.querySelector(`.input__info`);
     this.puppyList = element.querySelector(`.puppy-list`);
 
+    this.form = new CreateFormView(this.nav);
+
     this.create =
-    fetch(`http://tiny-tn.herokuapp.com/collections/ryan-puppy`)
+    fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies`)
     .then((res) => res.json())
     .then((data) => {
       data.forEach((item) => {
