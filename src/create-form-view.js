@@ -1,7 +1,10 @@
 export default class CreateFormView {
-  constructor(element) {
+  constructor(element, app) {
+    this.app = app;
+
     this.toggleBtn = element.querySelector(`.puppy-plus`);
     this.form = element.querySelector(`.top-nav__form`);
+
     this.nameInput = this.form.querySelector(`[name=name]`);
     this.ageInput = this.form.querySelector(`[name=age]`);
     this.photoInput = this.form.querySelector(`[name=photo]`);
@@ -32,7 +35,14 @@ export default class CreateFormView {
       fetch(url, fetchOptions)
         .then((res) => { return res.json(); })
         .then((puppy) => {
-          // ???
+          this.app.addPuppy(puppy);
+
+          this.nameInput.value = ``;
+          this.ageInput.value = ``;
+          this.photoInput.value = ``;
+          this.profileInput.value = ``;
+
+          this.toggleForm();
         });
     });
   }
