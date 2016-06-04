@@ -10,12 +10,12 @@ export default class ApplicationView {
 
     this.form = new CreateFormView(this.nav, this);
 
-    // this.create =
+    this.create =
     fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies`)
       .then((res) => res.json())
-      .then((data) => {
-        this.data = data;
-
+      .then((json) => {
+        this.data = json;
+        console.log(this.data);
         this.render();
       });
   }
@@ -36,9 +36,16 @@ export default class ApplicationView {
     });
   }
 
-  remove(puppy) {
-    this.puppy = this.puppy.filter((item) => {
-      return item !== puppy;
+  remove(puppy, p_id) {
+    console.log("original puppy=")
+    console.log(puppy);
+    console.log("this.app.remove(" + p_id + ")");
+    this.puppy = this.data.filter((item) => {
+      console.log("item=");
+      console.log(item);
+      console.log("puppy=");
+      console.log(puppy);
+      return item._id !== puppy._id;
     });
     this.render();
   }
