@@ -1,12 +1,12 @@
 'use strict';
-window.puppy_id_counter = 0;
+
 export default class PuppyView {
   constructor(info, app) {
     this.info = info;
     this.app = app;
     this.card = document.createElement(`form`);
+
     this.card.classList.add(`puppy-card`);
-    this._id = window.puppy_id_counter++;
     this.card.innerHTML = `
       <div class="puppy-image">
         <img class="puppy-image__pic" src="" alt=""/>
@@ -35,35 +35,13 @@ export default class PuppyView {
         </div>
       </div>`;
 
-      var that = this; // constructor's this
-
-      var update_button = this.card.querySelector(".form-button-update");
-      var update_delete = this.card.querySelector(".form-button-delete");
-
-      if (update_delete!= undefined) { /* Only if "this.element" is defined */
-          update_delete.addEventListener(`click`, () => {
-          this.deletePuppy(that._id);
-        });
-      } else { console.log("Caution: this.element does not exist!"); }
-
-  if (update_button != undefined) {
-      update_button.addEventListener(`click`, () => {
-        this.updatePuppy(that._id);
-      });
-    } else { console.log("Caution: this.element does not exist!"); }
-
-    this.render();
     // this.deletePuppy();
     // this.update();
+    //
+    // this.render();
   }
 
-
-
-
-  updatePuppy(puppyId) {
-
-console.log("updatePuppy(" + puppyId + ");");
-
+  updatePuppy() {
     const pups = {
       name: this.card.querySelector(`.input-field__name`).value,
       age: this.card.querySelector(`.input-field__age`).value,
@@ -71,46 +49,43 @@ console.log("updatePuppy(" + puppyId + ");");
       profile: this.card.querySelector(`.input-field__profile`).value,
     };
 
-if (puppyId == undefined) {
-  console.log("Error: this.puppy._id does not exist.");
-} else
-    console.log("Note: fetching puppy id = " + puppyId);
-    fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies-${puppyId}`, {
-      method: `PUT`,
-      headers: {
-        Accept: `application/json`,
-        'Content-type': `application/json`,
-      },
-      body: JSON.stringify(pups),
-    }).then((res) => res.json())
-    .then((data) => {
-      Object.assign(data, pups);
+    this.card.querySelector(`.form-button-update`).addEventListener(`submit`, (ev) => {
+      ev.preventDefault();
 
-      this.render();
+      fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies-${this.info._id}`, {
+        method: `PUT`,
+        headers: {
+          Accept: `application/json`,
+          'Content-type': `application/json`,
+        },
+        body: JSON.stringify(pups),
+      }).then((res) => res.json())
+      .then((data) => {
+        this.info = data;
+        // Object.assign(data, pups);
+        this.render();
+      });
     });
   }
 
 
   deletePuppy() {
-    const id = this.card.querySelector(`[name=_id]`);
-    id.value = this.info._id;
+    this.card.querySelector(`.form-button-delete`).addEventListener(`click`, (ev) => {
+      ev.preventDefault();
 
-fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies/${id.value}`, {
-//    fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies/${this.puppy._id}`, {
-      method: `DELETE`,
-    }).then((res) => res.json())
+      fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies/${this.info._id}`, {
+        method: `DELETE`,
+      }).then((res) => res.json())
         .then(() => {
-          this.app.remove(this.puppy);
+          this.app.remove(this.info);
         });
+    });
   }
 
 
   render() {
     const pic = this.card.querySelector(`.puppy-image__pic`);
     pic.setAttribute(`src`, this.info.photoUrl);
-
-    //const ____id = this.card.querySelector(`[name=name]`);
-    //____id.value = this.info._id;
 
     const name = this.card.querySelector(`[name=name]`);
     name.value = this.info.name;
@@ -123,13 +98,5 @@ fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies/${id.value}`, {
 
     const profile = this.card.querySelector(`[name=profile]`);
     profile.value = this.info.profile;
-
-    const id = this.card.querySelector(`[name=_id]`);
-    id.value = this.info._id;
-    //console.log(this.info._id);
-
-
-
-
   }
 }

@@ -1,38 +1,40 @@
-export default class CreateFormView {
-  constructor(element, app) {
-    this.app = app;
-    this.element = element;
-    this.toggleBtn = element.querySelector(`.puppy-plus`);
-    this.form = element.querySelector(`.top-nav__form`);
+ 'use strict';
 
-    this.nameInput = this.form.querySelector(`[name=name]`);
-    this.ageInput = this.form.querySelector(`[name=age]`);
-    this.photoInput = this.form.querySelector(`[name=photo-url]`);
-    this.profileInput = this.form.querySelector(`[name=profile]`);
+ export default class CreateFormView {
+   constructor(element, app) {
+     this.app = app;
+     this.element = element;
+     this.toggleBtn = element.querySelector(`.puppy-plus`);
+     this.form = element.querySelector(`.top-nav__form`);
 
-    this.toggleBtn.addEventListener(`click`, () => {
-      this.toggleForm();
-    });
+     this.nameInput = this.form.querySelector(`[name=name]`);
+     this.ageInput = this.form.querySelector(`[name=age]`);
+     this.photoInput = this.form.querySelector(`[name=photo-url]`);
+     this.profileInput = this.form.querySelector(`[name=profile]`);
 
-    this.form.addEventListener(`submit`, (ev) => {
-      ev.preventDefault();
-      const name = this.nameInput.value;
-      const age = this.ageInput.value;
-      const photoUrl = this.photoInput.value;
-      const profile = this.profileInput.value;
+     this.toggleBtn.addEventListener(`click`, () => {
+       this.toggleForm();
+     });
 
-      const fetchOptions = {
-        method: `POST`,
-        headers: {
-          Accept: `application/json`,
-          'Content-Type': `application/json`,
-        },
-        body: JSON.stringify({ name, age, photoUrl, profile }),
-      };
+     this.form.addEventListener(`submit`, (ev) => {
+       ev.preventDefault();
+       const name = this.nameInput.value;
+       const age = this.ageInput.value;
+       const photoUrl = this.photoInput.value;
+       const profile = this.profileInput.value;
 
-      const url = `http://tiny-tn.herokuapp.com/collections/ts-puppies`;
+       const fetchOptions = {
+         method: `POST`,
+         headers: {
+           Accept: `application/json`,
+           'Content-Type': `application/json`,
+         },
+         body: JSON.stringify({ name, age, photoUrl, profile }),
+       };
 
-      fetch(url, fetchOptions)
+       const url = `http://tiny-tn.herokuapp.com/collections/ts-puppies`;
+
+       fetch(url, fetchOptions)
         .then((res) => { return res.json(); })
         .then((puppy) => {
           this.app.addPuppy(puppy);
@@ -44,10 +46,10 @@ export default class CreateFormView {
 
           this.toggleForm();
         });
-    });
-  }
+     });
+   }
 
-  toggleForm() {
-    this.form.classList.toggle(`top-nav__form--active`);
-  }
+   toggleForm() {
+     this.form.classList.toggle(`top-nav__form--active`);
+   }
 }
