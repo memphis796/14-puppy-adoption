@@ -3,14 +3,14 @@
  export default class CreateFormView {
    constructor(element, app) {
      this.app = app;
-     this.element = element;
+    //  this.element = element;
      this.toggleBtn = element.querySelector(`.puppy-plus`);
      this.form = element.querySelector(`.top-nav__form`);
 
-     this.nameInput = this.form.querySelector(`[name=name]`);
-     this.ageInput = this.form.querySelector(`[name=age]`);
-     this.photoInput = this.form.querySelector(`[name=photo-url]`);
-     this.profileInput = this.form.querySelector(`[name=profile]`);
+     this.nameInput = this.form.querySelector(`#puppy_name`);
+     this.ageInput = this.form.querySelector(`.puppy__input-field__age`);
+     this.photoInput = this.form.querySelector(`.puppy__input-field__photo`);
+     this.profileInput = this.form.querySelector(`.puppy__input-field__profile`);
 
      this.toggleBtn.addEventListener(`click`, () => {
        this.toggleForm();
@@ -18,6 +18,7 @@
 
      this.form.addEventListener(`submit`, (ev) => {
        ev.preventDefault();
+
        const name = this.nameInput.value;
        const age = this.ageInput.value;
        const photoUrl = this.photoInput.value;

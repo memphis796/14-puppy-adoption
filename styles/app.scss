@@ -33,9 +33,9 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   }
 }
 
-.puppy-plus:hover {
-  // display: block;
-}
+// .puppy-plus:hover {
+//    display: block;
+// }
 
 .form-title {
   margin-top: 0;
@@ -46,6 +46,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   border: 0;
   border-bottom: $brand-border-bottom;
   background-color: $puppy-addon-form;
+  font-size: 1.1rem;
 }
 
 .puppy-card {
@@ -67,6 +68,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   border: 0;
   border-bottom: $brand-border-bottom;
   background-color: $brand-background;
+  font-size: 1rem;
 }
 
 .puppy-card__form {
@@ -97,6 +99,16 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 .form-button {
   justify-content: space-between;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 0.5em;
+  background-color: $brand-background-color;
+  color: $brand-color;
+  font-size: 0.9em;
+}
+
+.form-button-delete,
+.form-button-update {
   padding: 0.5em;
   border: 0;
   border-radius: 0.5em;

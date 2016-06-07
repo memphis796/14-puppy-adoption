@@ -35,39 +35,38 @@ export default class PuppyView {
         </div>
       </div>`;
 
-    // this.deletePuppy();
-    // this.update();
-    //
-    // this.render();
+    this.render();
+    this.deletePuppy(this.card.id);
+    this.updatePuppy(this.card.id);
   }
 
   updatePuppy() {
-    const pups = {
-      name: this.card.querySelector(`.input-field__name`).value,
-      age: this.card.querySelector(`.input-field__age`).value,
-      photoUrl: this.card.querySelector(`.input-field__photo-url`).value,
-      profile: this.card.querySelector(`.input-field__profile`).value,
-    };
-
-    this.card.querySelector(`.form-button-update`).addEventListener(`submit`, (ev) => {
+    this.card.querySelector(`.form-button-update`).addEventListener(`click`, (ev) => {
       ev.preventDefault();
 
-      fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies-${this.info._id}`, {
+      const pups = {
+        name: this.card.querySelector(`.input-field__name`).value,
+        age: this.card.querySelector(`.input-field__age`).value,
+        photoUrl: this.card.querySelector(`.input-field__photo-url`).value,
+        profile: this.card.querySelector(`.input-field__profile`).value,
+      };
+
+      fetch(`http://tiny-tn.herokuapp.com/collections/ts-puppies/${this.info._id}`, {
         method: `PUT`,
         headers: {
           Accept: `application/json`,
-          'Content-type': `application/json`,
+          'Content-Type': `application/json`,
         },
         body: JSON.stringify(pups),
+
       }).then((res) => res.json())
       .then((data) => {
         this.info = data;
-        // Object.assign(data, pups);
+
         this.render();
       });
     });
   }
-
 
   deletePuppy() {
     this.card.querySelector(`.form-button-delete`).addEventListener(`click`, (ev) => {
@@ -77,7 +76,7 @@ export default class PuppyView {
         method: `DELETE`,
       }).then((res) => res.json())
         .then(() => {
-          this.app.remove(this.info);
+          this.card.remove(this.info);
         });
     });
   }
@@ -86,6 +85,9 @@ export default class PuppyView {
   render() {
     const pic = this.card.querySelector(`.puppy-image__pic`);
     pic.setAttribute(`src`, this.info.photoUrl);
+
+    const iid = this.card.querySelector(`[name=_id]`);
+    iid.value = this.info._id;
 
     const name = this.card.querySelector(`[name=name]`);
     name.value = this.info.name;
