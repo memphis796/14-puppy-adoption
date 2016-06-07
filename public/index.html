@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>14-Puppy-Adoption</title>
-  <link rel="stylesheet" href="/app.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>14-Puppy-Adoption</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+
+    <nav class="top-nav">
+      <h2 class="top-nav__header">Puppies<i class="puppy-plus fa fa-plus-circle"></i>
+      </h2>
+
+      <form class="top-nav__form">
+        <div class="puppy-container">
+          <h3 class="form-title">Add a new puppy</h3>
+
+          <div class="puppy__form">
+
+            <label class="label-name">Name</label>
+            <input id = "puppy_name" class="puppy__input-field puppy__input-field__name" type="text" name="name" value="">
+
+            <label class="label-name">Age</label>
+            <input class="puppy__input-field puppy__input-field__age" type="text" name="age" value="">
+
+            <label class="label-name">Photo URL</label>
+            <input class="puppy__input-field puppy__input-field__photo" type="text" name="photo" value="">
+
+            <label class="label-name">Profile</label>
+            <input class="puppy__input-field puppy__input-field__profile" type="text" name="profile" value="">
+
+            <div class="top-label__buttons">
+              <button class="form-button">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </nav>
+
+
+    <div class="puppy-list">
+    </div>
 
   <script src="/vendor.js" charset="utf-8"></script>
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+    var index = require('index');
+
+    index();
   </script>
 </body>
 </html>
